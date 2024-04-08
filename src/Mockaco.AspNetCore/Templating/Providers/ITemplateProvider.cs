@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Mockaco
 {
-    internal interface ITemplateProvider
+    public interface ITemplateProvider
     {
         event EventHandler OnChange;
 

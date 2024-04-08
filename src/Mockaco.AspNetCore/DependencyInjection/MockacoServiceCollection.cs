@@ -59,7 +59,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
                 .AddSingleton<IFakerFactory, LocalizedFakerFactory>()
                 .AddSingleton<IMockProvider, MockProvider>()
-                .AddSingleton<ITemplateProvider, TemplateFileProvider>()
+                //.AddSingleton<ITemplateProvider, TemplateFileProvider>()
 
                 .AddScoped<IRequestMatcher, RequestMethodMatcher>()
                 .AddScoped<IRequestMatcher, RequestRouteMatcher>()

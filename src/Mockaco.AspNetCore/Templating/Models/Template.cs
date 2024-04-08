@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Mockaco
 {
-    internal class Template
+    public class Template
     {
         public Template()
         {

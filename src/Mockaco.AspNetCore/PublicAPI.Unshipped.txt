@@ -1,6 +1,22 @@
 ﻿Bogus.PhoneNumberExtensions
 Microsoft.AspNetCore.Builder.MockacoApplicationBuilder
 Microsoft.Extensions.DependencyInjection.MockacoServiceCollection
+Mockaco.CallbackTemplate
+Mockaco.CallbackTemplate.Body.get -> Newtonsoft.Json.Linq.JToken
+Mockaco.CallbackTemplate.Body.set -> void
+Mockaco.CallbackTemplate.CallbackTemplate() -> void
+Mockaco.CallbackTemplate.Delay.get -> int?
+Mockaco.CallbackTemplate.Delay.set -> void
+Mockaco.CallbackTemplate.Headers.get -> System.Collections.Generic.IDictionary<string, string>
+Mockaco.CallbackTemplate.Headers.set -> void
+Mockaco.CallbackTemplate.Indented.get -> bool?
+Mockaco.CallbackTemplate.Indented.set -> void
+Mockaco.CallbackTemplate.Method.get -> string
+Mockaco.CallbackTemplate.Method.set -> void
+Mockaco.CallbackTemplate.Timeout.get -> int?
+Mockaco.CallbackTemplate.Timeout.set -> void
+Mockaco.CallbackTemplate.Url.get -> string
+Mockaco.CallbackTemplate.Url.set -> void
 Mockaco.HealthChecks.StartupHealthCheck
 Mockaco.HealthChecks.StartupHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult>
 Mockaco.HealthChecks.StartupHealthCheck.StartupCompleted.get -> bool
@@ -31,6 +47,9 @@ Mockaco.IScriptContext.Request.get -> Mockaco.ScriptContextRequest
 Mockaco.IScriptContext.Request.set -> void
 Mockaco.IScriptContext.Response.get -> Mockaco.ScriptContextResponse
 Mockaco.IScriptContext.Response.set -> void
+Mockaco.ITemplateProvider
+Mockaco.ITemplateProvider.GetTemplates() -> System.Collections.Generic.IEnumerable<Mockaco.IRawTemplate>
+Mockaco.ITemplateProvider.OnChange -> System.EventHandler
 Mockaco.Mock
 Mockaco.Mock.HasCondition.get -> bool
 Mockaco.Mock.HasCondition.set -> void
@@ -65,6 +84,19 @@ Mockaco.MockacoOptions.VerificationEndpointName.get -> string
 Mockaco.MockacoOptions.VerificationEndpointName.set -> void
 Mockaco.MockacoOptions.VerificationEndpointPrefix.get -> string
 Mockaco.MockacoOptions.VerificationEndpointPrefix.set -> void
+Mockaco.RawTemplate
+Mockaco.RawTemplate.Content.get -> string
+Mockaco.RawTemplate.Hash.get -> string
+Mockaco.RawTemplate.Name.get -> string
+Mockaco.RawTemplate.RawTemplate(string name, string content) -> void
+Mockaco.RequestTemplate
+Mockaco.RequestTemplate.Condition.get -> bool?
+Mockaco.RequestTemplate.Condition.set -> void
+Mockaco.RequestTemplate.Method.get -> string
+Mockaco.RequestTemplate.Method.set -> void
+Mockaco.RequestTemplate.RequestTemplate() -> void
+Mockaco.RequestTemplate.Route.get -> string
+Mockaco.RequestTemplate.Route.set -> void
 Mockaco.ResponseTemplate
 Mockaco.ResponseTemplate.Body.get -> Newtonsoft.Json.Linq.JToken
 Mockaco.ResponseTemplate.Body.set -> void
@@ -107,6 +139,16 @@ Mockaco.StringDictionary.Replace(string key, string value) -> void
 Mockaco.StringDictionary.StringDictionary() -> void
 Mockaco.StringDictionary.this[string key].get -> string
 Mockaco.StringDictionary.this[string key].set -> void
+Mockaco.Template
+Mockaco.Template.Callback.get -> Mockaco.CallbackTemplate
+Mockaco.Template.Callback.set -> void
+Mockaco.Template.Callbacks.get -> System.Collections.Generic.IEnumerable<Mockaco.CallbackTemplate>
+Mockaco.Template.Callbacks.set -> void
+Mockaco.Template.Request.get -> Mockaco.RequestTemplate
+Mockaco.Template.Request.set -> void
+Mockaco.Template.Response.get -> Mockaco.ResponseTemplate
+Mockaco.Template.Response.set -> void
+Mockaco.Template.Template() -> void
 Mockaco.TemplateFileProviderOptions
 Mockaco.TemplateFileProviderOptions.Path.get -> string
 Mockaco.TemplateFileProviderOptions.Path.set -> void

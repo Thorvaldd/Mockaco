@@ -75,7 +75,7 @@ namespace Mockaco
             {
                 try
                 {
-                    var existentCachedRoute = _cache.FirstOrDefault(cachedRoute => cachedRoute.RawTemplate.Hash == rawTemplate.Hash);
+                    /*var existentCachedRoute = _cache.FirstOrDefault(cachedRoute => cachedRoute.RawTemplate.Hash == rawTemplate.Hash);
 
                     if (existentCachedRoute != default)
                     {
@@ -84,7 +84,7 @@ namespace Mockaco
                         mocks.Add(existentCachedRoute);
 
                         continue;
-                    }
+                    }*/
 
                     _logger.LogDebug("Loading {0} ({1})", rawTemplate.Name, rawTemplate.Hash);
 

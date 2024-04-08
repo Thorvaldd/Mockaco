@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Mockaco
 {
-    internal class CallbackTemplate
+    public class CallbackTemplate
     {
         public string Method { get; set; }
 

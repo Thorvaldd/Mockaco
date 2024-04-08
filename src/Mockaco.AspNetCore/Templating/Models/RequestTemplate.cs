@@ -1,6 +1,6 @@
 ﻿namespace Mockaco
 {
-    internal class RequestTemplate
+    public class RequestTemplate
     {
         public string Method { get; set; }
 
