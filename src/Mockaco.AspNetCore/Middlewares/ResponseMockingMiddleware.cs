@@ -38,6 +38,11 @@ namespace Mockaco
 
             AddHeadersFromTemplate(httpResponse, transformedTemplate.Response, options);
 
+            if (httpResponse.Headers.ContainsKey("Mocked") == false)
+                httpResponse.Headers.Add("Mocked", "true");
+            else
+                httpResponse.Headers["Mocked"] = "true";
+
             var bodyBytes = await responseBodyFactory.GetResponseBodyBytesFromTemplate(transformedTemplate.Response);
 
             if (bodyBytes == default)
