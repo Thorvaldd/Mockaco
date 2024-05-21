@@ -10,7 +10,7 @@ using Mockaco.Options;
 using Mockaco.Templating.Models;
 using Polly;
 
-namespace Mockaco.Templating.Providers
+namespace Mockaco.Templating.Providers.FileProvider
 {
     internal sealed class TemplateFileProvider : ITemplateProvider, IDisposable
     {
@@ -112,6 +112,11 @@ namespace Mockaco.Templating.Providers
 
                     return LoadTemplatesFromDirectory();
                 });
+        }
+
+        public Task<IEnumerable<IRawTemplate>> GetTemplatesAsync()
+        {
+            throw new NotImplementedException();
         }
 
         private void PostEvictionCallback(object key, object value, EvictionReason reason, object state)

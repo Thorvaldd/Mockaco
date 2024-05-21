@@ -7,5 +7,7 @@ namespace Mockaco.Templating.Providers
         event EventHandler OnChange;
 
         IEnumerable<IRawTemplate> GetTemplates();
+
+        Task<IEnumerable<IRawTemplate>> GetTemplatesAsync();
     }
 }

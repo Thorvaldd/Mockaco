@@ -42,7 +42,7 @@ namespace Mockaco.Middlewares
             AddHeadersFromTemplate(httpResponse, transformedTemplate.Response, options);
 
             if (httpResponse.Headers.ContainsKey("Mocked") == false)
-                httpResponse.Headers.Add("Mocked", "true");
+                httpResponse.Headers.Append("Mocked", "true");
             else
                 httpResponse.Headers["Mocked"] = "true";
 
@@ -69,7 +69,7 @@ namespace Mockaco.Middlewares
             {
                 foreach (var header in responseTemplate.Headers)
                 {
-                    response.Headers.Add(header.Key, header.Value);
+                    response.Headers.Append(header.Key, header.Value);
                 }
             }
 
