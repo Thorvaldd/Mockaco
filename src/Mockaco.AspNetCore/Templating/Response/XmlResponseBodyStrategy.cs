@@ -1,8 +1,10 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Xml;
+using Mockaco.Common;
+using Mockaco.Extensions;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Response
 {
     internal class XmlResponseBodyStrategy : StringResponseBodyStrategy
     {

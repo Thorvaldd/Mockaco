@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using Mockaco.Common;
+using Mockaco.Extensions;
+using Mockaco.Options;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Middlewares
 {
     internal class ErrorHandlingMiddleware
     {

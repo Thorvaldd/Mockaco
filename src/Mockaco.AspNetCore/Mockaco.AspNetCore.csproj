@@ -44,16 +44,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Bogus" Version="34.0.2" />
+		<PackageReference Include="Bogus" Version="35.5.1" />
 		<PackageReference Include="MAB.DotIgnore" Version="3.0.2" />
-		<PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.4" />
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.6.0" />
-		<PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
+		<PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.14" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.9.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="Polly" Version="7.2.3" />
+		<PackageReference Include="Polly" Version="8.4.0" />
 		<PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />
 	</ItemGroup>
 

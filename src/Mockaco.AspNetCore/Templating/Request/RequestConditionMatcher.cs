@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Scripting;
 
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     internal class RequestConditionMatcher : IRequestMatcher
     {

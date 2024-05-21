@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Mockaco
+namespace Mockaco.Templating.Models
 {
     [DebuggerDisplay("{Method} {Route} ({RawTemplate.Name})")]
     public class Mock

@@ -1,6 +1,6 @@
-﻿using Mockaco;
+﻿using Mockaco.Common;
 
-namespace System.Collections.Generic
+namespace Mockaco.Extensions
 {
     internal static class StringDictionaryExtensions
     {

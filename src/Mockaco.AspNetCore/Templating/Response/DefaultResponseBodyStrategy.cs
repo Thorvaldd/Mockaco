@@ -1,4 +1,6 @@
-﻿namespace Mockaco
+﻿using Mockaco.Templating.Models;
+
+namespace Mockaco.Templating.Response
 {
     internal class DefaultResponseBodyStrategy : StringResponseBodyStrategy
     {

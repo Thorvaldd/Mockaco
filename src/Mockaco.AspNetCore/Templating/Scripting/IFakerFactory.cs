@@ -1,7 +1,6 @@
 ﻿using Bogus;
-using System.Collections.Generic;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     public interface IFakerFactory
     {

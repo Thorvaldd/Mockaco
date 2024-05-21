@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Mockaco
+﻿namespace Mockaco.Common
 {
     public class StringDictionary : Dictionary<string, string>, IReadOnlyDictionary<string, string>
     {

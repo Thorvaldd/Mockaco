@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Net;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using System.Net;
-using System.Threading.Tasks;
+using Mockaco.Options;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Response;
+using Mockaco.Templating.Scripting;
 
-namespace Mockaco
+namespace Mockaco.Middlewares
 {
     internal class ResponseMockingMiddleware
     {

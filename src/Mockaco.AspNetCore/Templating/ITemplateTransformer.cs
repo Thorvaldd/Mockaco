@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using Mockaco.Templating.Models;
+using Mockaco.Templating.Scripting;
 
-namespace Mockaco
+namespace Mockaco.Templating
 {
     internal interface ITemplateTransformer
     {

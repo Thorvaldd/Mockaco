@@ -1,4 +1,4 @@
-﻿namespace Mockaco
+﻿namespace Mockaco.Templating.Scripting
 {
     public interface IGlobalVariableStorage
     {

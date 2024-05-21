@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mockaco.Options;
+using Mockaco.Templating.Scripting;
 
-namespace Mockaco.Tests.Templating.Scripting
+namespace Mockaco.AspNetCore.Tests.Templating.Scripting
 {
     public class ScriptRunnerFactoryTest
     {

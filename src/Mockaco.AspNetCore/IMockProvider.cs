@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Mockaco.Templating.Models;
 
 namespace Mockaco
 {

@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mockaco.Extensions;
+using Mockaco.Options;
+using Mockaco.Templating;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Request;
+using Mockaco.Templating.Scripting;
 
-namespace Mockaco
+namespace Mockaco.Middlewares
 {
     internal class RequestMatchingMiddleware
     {

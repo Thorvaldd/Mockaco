@@ -1,4 +1,4 @@
-﻿namespace Mockaco
+﻿namespace Mockaco.Common
 {
     internal static class HttpHeaders
     {

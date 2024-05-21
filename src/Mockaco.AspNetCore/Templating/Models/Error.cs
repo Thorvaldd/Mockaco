@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mockaco
+﻿namespace Mockaco.Templating.Models
 {
     internal class Error
     {

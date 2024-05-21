@@ -1,4 +1,4 @@
-﻿namespace Mockaco
+﻿namespace Mockaco.Templating.Models
 {
     public class RequestTemplate
     {

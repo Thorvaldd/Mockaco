@@ -1,9 +1,8 @@
 ﻿using FluentAssertions;
 using Microsoft.Extensions.Logging;
-using System.Linq;
-using Xunit;
+using Mockaco.Templating.Scripting;
 
-namespace Mockaco.Tests.Scripting
+namespace Mockaco.AspNetCore.Tests.Templating.Scripting
 {
     public class LocalizedFakerFactoryTest
     {

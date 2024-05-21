@@ -1,12 +1,12 @@
-﻿using FluentAssertions;
+﻿using System.Net;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
+using Mockaco.Templating;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Scripting;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Net;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace Mockaco.Tests.Templating
+namespace Mockaco.AspNetCore.Tests.Templating
 {
     public class TemplateTransformerTest
     {

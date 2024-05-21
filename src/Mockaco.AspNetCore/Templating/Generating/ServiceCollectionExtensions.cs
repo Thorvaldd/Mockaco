@@ -1,12 +1,12 @@
-using Mockaco.Templating.Generating;
+using System.CommandLine;
+using System.CommandLine.Invocation;
+using Microsoft.Extensions.DependencyInjection;
 using Mockaco.Templating.Generating.Cli;
 using Mockaco.Templating.Generating.Providers;
 using Mockaco.Templating.Generating.Source;
 using Mockaco.Templating.Generating.Store;
-using System.CommandLine;
-using System.CommandLine.Invocation;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Mockaco.Templating.Generating
 {
     internal static class ServiceCollectionExtensions
     {

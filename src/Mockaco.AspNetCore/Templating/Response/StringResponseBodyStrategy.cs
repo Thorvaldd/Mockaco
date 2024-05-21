@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using System.Threading.Tasks;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Response
 {
     internal abstract class StringResponseBodyStrategy : IResponseBodyStrategy
     {

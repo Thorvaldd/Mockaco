@@ -22,16 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-using Microsoft.Net.Http.Headers;
-using Mockaco;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Net.Http.Headers;
+using Mockaco.Common;
+using Mockaco.Templating.Models;
 
-namespace Microsoft.AspNetCore.Http
+namespace Mockaco.Extensions
 {
     /// <summary>
     /// Set of extension methods for Microsoft.AspNetCore.Http.HttpRequest
@@ -78,7 +75,7 @@ namespace Microsoft.AspNetCore.Http
             return new Uri(builder.ToString());
         }
 
-        public static Routing.RouteValueDictionary GetRouteData(this HttpRequest request, Mock mock)
+        public static Microsoft.AspNetCore.Routing.RouteValueDictionary GetRouteData(this HttpRequest request, Mock mock)
         {
             var routeMatcher = new RouteMatcher();
 

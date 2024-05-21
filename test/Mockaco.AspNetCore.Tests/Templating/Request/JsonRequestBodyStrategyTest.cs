@@ -1,14 +1,11 @@
-﻿using FluentAssertions;
+﻿using System.Text;
+using FluentAssertions;
 using Microsoft.AspNetCore.Http;
+using Mockaco.Templating.Request;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace Mockaco.Tests.Templating.Request
+namespace Mockaco.AspNetCore.Tests.Templating.Request
 {
     public sealed class JsonRequestBodyStrategyTest : IDisposable
     {

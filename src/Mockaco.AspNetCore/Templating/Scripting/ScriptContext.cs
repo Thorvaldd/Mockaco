@@ -1,11 +1,12 @@
 ﻿using Bogus;
 using Microsoft.AspNetCore.Http;
+using Mockaco.Common;
+using Mockaco.Extensions;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Request;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     public class ScriptContext : IScriptContext
     {

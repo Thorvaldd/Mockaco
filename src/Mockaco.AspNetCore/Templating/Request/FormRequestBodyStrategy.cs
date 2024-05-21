@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     internal class FormRequestBodyStrategy : IRequestBodyStrategy
     {

@@ -1,4 +1,6 @@
-﻿namespace System.CommandLine.Parsing
+﻿using System.CommandLine.Parsing;
+
+namespace Mockaco.Extensions
 {
     public static class CommandLineExtensions
     {

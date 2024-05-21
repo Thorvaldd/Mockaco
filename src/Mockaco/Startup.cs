@@ -5,6 +5,8 @@ using Microsoft.Extensions.Logging;
 using System.Reflection;
 using System;
 using System.Linq;
+using Mockaco.DependencyInjection;
+using Sovarto.ReadGitVersionInformation;
 
 namespace Mockaco
 {
@@ -27,7 +29,7 @@ namespace Mockaco
         public void Configure(IApplicationBuilder app, ILogger<Startup> logger)
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-            var version = GitVersionInformation.InformationalVersion;
+            var version = GitVersion.GetVersionInformation().InformationalVersion;
             var isNoLogoPassed = Environment.GetCommandLineArgs().Contains("--no-logo");
 
             var logMessage = "{assemblyName} v{assemblyVersion} [github.com/natenho/Mockaco]";

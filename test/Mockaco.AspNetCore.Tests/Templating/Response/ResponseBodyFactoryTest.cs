@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Response;
 using Moq;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace Mockaco.Tests.Templating.Response
+namespace Mockaco.AspNetCore.Tests.Templating.Response
 {
     public class ResponseBodyFactoryTest
     {

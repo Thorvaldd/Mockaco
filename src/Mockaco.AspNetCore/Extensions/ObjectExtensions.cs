@@ -2,9 +2,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using System.Linq;
 
-namespace System
+namespace Mockaco.Extensions
 {
     internal static class ObjectExtensions
     {

@@ -9,7 +9,8 @@ using System.CommandLine.Parsing;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection; 
+using Microsoft.Extensions.DependencyInjection;
+using Mockaco.Extensions;
 
 namespace Mockaco
 {
@@ -17,9 +18,9 @@ namespace Mockaco
     {
         public static async Task Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
+            IHost host = CreateHostBuilder(args).Build();
 
-            var commandLine = CreateCommandLineBuilder(args, host)
+            Parser commandLine = CreateCommandLineBuilder(args, host)
                 .UseDefaults()
                 .Build();
 
@@ -38,10 +39,10 @@ namespace Mockaco
                 {
                     webBuilder.ConfigureAppConfiguration((_, configuration) =>
                     {
-                        var assemblyLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                        string assemblyLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                         configuration.SetBasePath(Path.Combine(assemblyLocation, "Settings"));
 
-                        var switchMappings = new Dictionary<string, string>() {
+                        Dictionary<string, string> switchMappings = new Dictionary<string, string>() {
                             {"--path", "Mockaco:TemplateFileProvider:Path" },
                             {"--logs", "Serilog:WriteTo:0:Args:path" }
                         };
@@ -54,9 +55,9 @@ namespace Mockaco
 
         private static CommandLineBuilder CreateCommandLineBuilder(string[] args, IHost host)
         {
-            var rootCommand = new RootCommand();
+            RootCommand rootCommand = new();
 
-            foreach (var cmd in host.Services.GetServices<Command>())
+            foreach (Command cmd in host.Services.GetServices<Command>())
             {
                 rootCommand.AddCommand(cmd);
             }

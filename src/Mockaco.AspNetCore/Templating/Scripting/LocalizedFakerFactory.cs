@@ -1,11 +1,9 @@
-﻿using Bogus;
+﻿using System.Globalization;
+using Bogus;
 using Bogus.Extensions;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     internal class LocalizedFakerFactory : IFakerFactory
     {

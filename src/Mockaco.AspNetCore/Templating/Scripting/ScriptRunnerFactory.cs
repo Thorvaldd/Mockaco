@@ -1,13 +1,14 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using System.Collections.Immutable;
+using System.Diagnostics;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.Collections.Immutable;
-using System.Diagnostics;
+using Mockaco.Options;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     internal class ScriptRunnerFactory : IScriptRunnerFactory
     {

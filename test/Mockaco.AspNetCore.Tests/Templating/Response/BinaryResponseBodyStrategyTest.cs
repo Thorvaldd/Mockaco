@@ -1,11 +1,9 @@
 ﻿using FluentAssertions;
-using System;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Xunit;
+using Mockaco.Common;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Response;
 
-namespace Mockaco.Tests.Templating.Response
+namespace Mockaco.AspNetCore.Tests.Templating.Response
 {
     public class BinaryResponseBodyStrategyTest
     {

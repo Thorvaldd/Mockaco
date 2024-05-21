@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Xml;
+using Microsoft.AspNetCore.Http;
+using Mockaco.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
-using System.Xml;
 
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     internal class XmlRequestBodyStrategy : IRequestBodyStrategy
     {

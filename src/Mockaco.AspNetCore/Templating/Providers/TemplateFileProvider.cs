@@ -6,14 +6,11 @@ using Microsoft.Extensions.FileProviders.Physical;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
+using Mockaco.Options;
+using Mockaco.Templating.Models;
 using Polly;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
 
-namespace Mockaco
+namespace Mockaco.Templating.Providers
 {
     internal sealed class TemplateFileProvider : ITemplateProvider, IDisposable
     {

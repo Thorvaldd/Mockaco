@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
-using System.Threading.Tasks;
 
-namespace Mockaco
+namespace Mockaco.Middlewares
 {
     internal class ResponseDelayMiddleware
     {

@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Mockaco;
-using Mockaco.Verifyer;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Mockaco.Middlewares;
+using Mockaco.Options;
+using Mockaco.Verifyer;
 
-namespace Microsoft.AspNetCore.Builder
+namespace Mockaco.DependencyInjection
 {
     public static class MockacoApplicationBuilder
     {

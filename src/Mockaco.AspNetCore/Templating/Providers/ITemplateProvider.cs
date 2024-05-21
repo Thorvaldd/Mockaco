@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Providers
 {
     public interface ITemplateProvider
     {

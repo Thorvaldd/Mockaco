@@ -1,9 +1,10 @@
 ﻿using FluentAssertions;
+using Mockaco.Common;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Response;
 using Newtonsoft.Json.Linq;
-using System;
-using Xunit;
 
-namespace Mockaco.Tests.Templating
+namespace Mockaco.AspNetCore.Tests.Templating.Response
 {
     public class XmlResponseBodyStrategyTest
     {

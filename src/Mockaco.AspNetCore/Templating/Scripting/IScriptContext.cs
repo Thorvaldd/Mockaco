@@ -1,8 +1,8 @@
 ﻿using Bogus;
 using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     public interface IScriptContext
     {

@@ -1,7 +1,9 @@
 ﻿using FluentAssertions;
-using Xunit;
+using Mockaco.Common;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Response;
 
-namespace Mockaco.Tests.Templating
+namespace Mockaco.AspNetCore.Tests.Templating.Response
 {
     public class DefaultResponseBodyStrategyTest
     {

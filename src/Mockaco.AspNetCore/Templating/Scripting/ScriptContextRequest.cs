@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     public class ScriptContextRequest
     {

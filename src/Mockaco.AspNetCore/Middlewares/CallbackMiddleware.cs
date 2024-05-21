@@ -1,18 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Diagnostics;
+using System.Net.Http.Headers;
+using System.Text;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mockaco.Options;
+using Mockaco.Templating;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Scripting;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+using HttpHeaders = Mockaco.Common.HttpHeaders;
 
-namespace Mockaco
+namespace Mockaco.Middlewares
 {
     internal class CallbackMiddleware
     {

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
+using Mockaco.Common;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     internal class RequestRouteMatcher : IRequestMatcher
     {

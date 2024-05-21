@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     internal class ScriptContextGlobalVariableStorage : IGlobalVariableStorage
     {

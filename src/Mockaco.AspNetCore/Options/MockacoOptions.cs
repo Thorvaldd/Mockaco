@@ -1,6 +1,7 @@
 ﻿using System.Net;
+using Mockaco.Common;
 
-namespace Mockaco
+namespace Mockaco.Options
 {
     public class MockacoOptions
     {

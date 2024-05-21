@@ -1,13 +1,18 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Mockaco.HealthChecks;
-using Mono.TextTemplating;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Mockaco.Templating;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Providers;
+using Mockaco.Templating.Request;
+using Mockaco.Templating.Scripting;
+using Mockaco.Templating.T4;
 
 namespace Mockaco
 {

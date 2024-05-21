@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using Mockaco.Common;
+using Newtonsoft.Json.Linq;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     public class ScriptContextResponse
     {

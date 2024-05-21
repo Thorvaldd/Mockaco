@@ -1,12 +1,11 @@
-﻿using FluentAssertions;
+﻿using System.Diagnostics;
+using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Moq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using Xunit;
+using Mockaco.Middlewares;
+using Mockaco.Templating.Models;
 
-namespace Mockaco.Tests.Middlewares
+namespace Mockaco.AspNetCore.Tests.Middlewares
 {
     public class ResponseDelayMiddlewareTest
     {

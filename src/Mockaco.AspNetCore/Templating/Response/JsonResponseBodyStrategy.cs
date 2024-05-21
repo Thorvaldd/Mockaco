@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Mockaco.Common;
+using Mockaco.Templating.Models;
+using Newtonsoft.Json;
 
-namespace Mockaco
+namespace Mockaco.Templating.Response
 {
     internal class JsonResponseBodyStrategy : StringResponseBodyStrategy
     {

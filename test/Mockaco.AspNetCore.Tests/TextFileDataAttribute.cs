@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
+﻿using System.Reflection;
 using Xunit.Sdk;
 
-namespace Mockaco.Tests
+namespace Mockaco.AspNetCore.Tests
 {
     public class TextFileDataAttribute : DataAttribute
     {

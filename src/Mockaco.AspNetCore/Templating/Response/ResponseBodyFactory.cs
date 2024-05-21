@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Response
 {
     internal class ResponseBodyFactory : IResponseBodyFactory
     {

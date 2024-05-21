@@ -1,11 +1,17 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Mockaco;
 using Mockaco.HealthChecks;
+using Mockaco.Options;
 using Mockaco.Settings;
+using Mockaco.Templating;
+using Mockaco.Templating.Generating;
+using Mockaco.Templating.Request;
+using Mockaco.Templating.Response;
+using Mockaco.Templating.Scripting;
+using Mockaco.WarmUps;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Mockaco.DependencyInjection
 {
     public static class MockacoServiceCollection
     {

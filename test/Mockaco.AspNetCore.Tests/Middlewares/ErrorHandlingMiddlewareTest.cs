@@ -2,16 +2,13 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mockaco.Middlewares;
+using Mockaco.Options;
+using Mockaco.Templating.Models;
 using Moq;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace Mockaco.Tests.Middlewares
+namespace Mockaco.AspNetCore.Tests.Middlewares
 {
     public class ErrorHandlingMiddlewareTest
     {

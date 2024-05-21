@@ -1,10 +1,8 @@
-﻿
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
+using Mockaco.Extensions;
 using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
 
-
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     internal class JsonRequestBodyStrategy: IRequestBodyStrategy
     {

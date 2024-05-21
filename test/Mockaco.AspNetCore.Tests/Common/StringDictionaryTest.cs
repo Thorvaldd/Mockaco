@@ -1,6 +1,7 @@
-using Xunit;
-using Mockaco;
 using FluentAssertions;
+using Mockaco.Common;
+
+namespace Mockaco.AspNetCore.Tests.Common;
 
 public class StringDictionaryTests
 {

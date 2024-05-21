@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Mockaco
+﻿namespace Mockaco.Templating.Models
 {
     public class Template
     {

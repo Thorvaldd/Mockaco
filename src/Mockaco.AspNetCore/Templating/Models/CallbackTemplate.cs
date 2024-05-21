@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
 
-namespace Mockaco
+namespace Mockaco.Templating.Models
 {
     public class CallbackTemplate
     {

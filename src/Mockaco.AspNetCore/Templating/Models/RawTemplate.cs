@@ -1,7 +1,7 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using Mockaco.Extensions;
 
-namespace Mockaco
+namespace Mockaco.Templating.Models
 {
     [DebuggerDisplay("{Name}")]
     public class RawTemplate : IRawTemplate

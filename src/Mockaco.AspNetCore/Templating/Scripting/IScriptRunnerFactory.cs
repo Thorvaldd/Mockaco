@@ -1,7 +1,6 @@
 ﻿using Microsoft.CodeAnalysis.Scripting;
-using System.Threading.Tasks;
 
-namespace Mockaco
+namespace Mockaco.Templating.Scripting
 {
     internal interface IScriptRunnerFactory
     {

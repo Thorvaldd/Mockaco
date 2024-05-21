@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
+using Mockaco.Templating.Models;
 using Newtonsoft.Json.Linq;
 
 namespace Mockaco.Templating.Generating.Providers

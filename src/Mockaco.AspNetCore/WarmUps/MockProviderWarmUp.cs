@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Hosting;
 
-namespace Mockaco
+namespace Mockaco.WarmUps
 {
     internal sealed class MockProviderWarmUp : IHostedService
     {

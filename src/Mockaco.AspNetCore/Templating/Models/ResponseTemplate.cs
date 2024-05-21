@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
+using Mockaco.Common;
+using Newtonsoft.Json.Linq;
 
-namespace Mockaco
+namespace Mockaco.Templating.Models
 {
     public class ResponseTemplate
     {

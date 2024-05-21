@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Text;
+using Microsoft.Extensions.Logging;
 using Mockaco.Common;
-using Mono.TextTemplating;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Scripting;
+using Mockaco.Templating.T4;
 using Newtonsoft.Json;
-using System.Text;
 
-namespace Mockaco
+namespace Mockaco.Templating
 {
     internal class TemplateTransformer : ITemplateTransformer
     {

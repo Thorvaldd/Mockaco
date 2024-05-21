@@ -1,6 +1,7 @@
-﻿using Bogus.DataSets;
+﻿using Bogus;
+using Bogus.DataSets;
 
-namespace Bogus
+namespace Mockaco.Plugins
 {
     // TODO Move to plugin
     public static class PhoneNumberExtensions

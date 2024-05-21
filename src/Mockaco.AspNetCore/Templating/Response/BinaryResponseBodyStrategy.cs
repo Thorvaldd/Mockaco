@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using Mockaco.Common;
+using Mockaco.Extensions;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Response
 {
     internal class BinaryResponseBodyStrategy : IResponseBodyStrategy
     {

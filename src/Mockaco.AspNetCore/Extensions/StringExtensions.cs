@@ -1,12 +1,12 @@
 ﻿using System.Text;
 
-namespace System
+namespace Mockaco.Extensions
 {
     internal static class StringExtensions
     {
         public static string ToMD5Hash(this string input)
         {
-            using (Security.Cryptography.MD5 md5 = Security.Cryptography.MD5.Create())
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
             {
                 var inputBytes = Encoding.UTF8.GetBytes(input);
                 var hashBytes = md5.ComputeHash(inputBytes);

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
 
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     public interface IRequestBodyFactory
     {

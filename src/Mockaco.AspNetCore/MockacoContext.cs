@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Mockaco.Templating.Models;
+using Mockaco.Templating.Scripting;
 
 namespace Mockaco
 {

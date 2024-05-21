@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace System.Collections.Generic
+﻿namespace Mockaco.Extensions
 {
     internal static class EnumerableExtensions
     {

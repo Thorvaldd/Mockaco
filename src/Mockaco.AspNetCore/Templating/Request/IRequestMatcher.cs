@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
+using Mockaco.Templating.Models;
 
-namespace Mockaco
+namespace Mockaco.Templating.Request
 {
     internal interface IRequestMatcher
     {
