@@ -14,8 +14,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockaco.AspNetCore.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockaco.AspNetCore", "src\Mockaco.AspNetCore\Mockaco.AspNetCore.csproj", "{7766C592-9887-4162-8B9C-51003ED30335}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockakoCaller", "MockakoCaller\MockakoCaller.csproj", "{6F8D182E-0BD8-4DDA-A642-729E09988186}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +37,6 @@ Global
 		{7766C592-9887-4162-8B9C-51003ED30335}.Nuget|Any CPU.Build.0 = Release|Any CPU
 		{7766C592-9887-4162-8B9C-51003ED30335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7766C592-9887-4162-8B9C-51003ED30335}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F8D182E-0BD8-4DDA-A642-729E09988186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F8D182E-0BD8-4DDA-A642-729E09988186}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F8D182E-0BD8-4DDA-A642-729E09988186}.Nuget|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F8D182E-0BD8-4DDA-A642-729E09988186}.Nuget|Any CPU.Build.0 = Debug|Any CPU
-		{6F8D182E-0BD8-4DDA-A642-729E09988186}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F8D182E-0BD8-4DDA-A642-729E09988186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

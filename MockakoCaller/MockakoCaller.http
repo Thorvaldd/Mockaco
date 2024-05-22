@@ -1,6 +1,0 @@
-@MockakoCaller_HostAddress = http://localhost:5146
-
-GET {{MockakoCaller_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
