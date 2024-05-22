@@ -1,9 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Mockaco.Templating.Generating.Source
+﻿namespace Mockaco.Templating.Generating.Source
 {
     internal class LocalFileContentProvider : ISourceContentProvider
     {

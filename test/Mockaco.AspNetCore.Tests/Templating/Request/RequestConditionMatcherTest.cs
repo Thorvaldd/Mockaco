@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System.Net;
 using Mockaco.Templating;
 using Mockaco.Templating.Models;
 using Mockaco.Templating.Request;

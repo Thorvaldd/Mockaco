@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Mockaco.Templating.Generating.Source
+﻿namespace Mockaco.Templating.Generating.Source
 {
     internal class SourceContentProviderComposite : ISourceContentProvider
     {

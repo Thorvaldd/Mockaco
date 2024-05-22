@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-
 namespace Mockaco.Templating.Generating
 {
     internal class GeneratingOptions

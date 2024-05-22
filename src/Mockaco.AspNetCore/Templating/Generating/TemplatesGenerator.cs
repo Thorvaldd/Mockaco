@@ -1,5 +1,3 @@
-using System.Threading;
-using System.Threading.Tasks;
 using Mockaco.Templating.Generating.Providers;
 using Mockaco.Templating.Generating.Source;
 using Mockaco.Templating.Generating.Store;
