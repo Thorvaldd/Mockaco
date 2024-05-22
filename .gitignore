@@ -265,3 +265,4 @@ __pycache__/
 src/Mockaco/Mocks*/**/*.*
 !src/Mockaco/Mocks/hello.json
 /.vscode
+.DS_Store
