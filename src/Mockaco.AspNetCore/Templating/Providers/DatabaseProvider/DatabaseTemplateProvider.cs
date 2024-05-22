@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 using Mockaco.Templating.Models;
 using Mockaco.Templating.Providers.DatabaseProvider.Context;
+using Mockaco.Templating.Providers.DatabaseProvider.Models;
 
 namespace Mockaco.Templating.Providers.DatabaseProvider;
 
@@ -14,6 +15,7 @@ public class DatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable whe
     private readonly IMemoryCache _memoryCache;
     private ILogger<DatabaseTemplateProvider<TKey>> _logger;
     private readonly MockakoDatabaseContext<TKey> _databaseContext;
+    private readonly DatabaseProviderOptions _options;
     
     private readonly string _cacheKey = "_Mockaco_database_mock_provider";
 
@@ -22,20 +24,55 @@ public class DatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable whe
 
     public DatabaseTemplateProvider(IMemoryCache memoryCache,
         ILogger<DatabaseTemplateProvider<TKey>> logger,
-        MockakoDatabaseContext<TKey> databaseContext)
+        MockakoDatabaseContext<TKey> databaseContext,
+        DatabaseProviderOptions options)
     {
         _memoryCache = memoryCache;
         _logger = logger;
         _databaseContext = databaseContext;
+        _options = options;
 
 
         Observable.Interval(TimeSpan.FromSeconds(30))
             .Subscribe(_ => { IsUpdatesAppeared(); });
     }
-
-    public void IsUpdatesAppeared()
+    
+    public IEnumerable<IRawTemplate> GetTemplates()
     {
-        var templates = _databaseContext.MockakoRestConfigs
+        return _memoryCache
+            .GetOrCreate(
+                _cacheKey,
+                ci =>
+                {
+                    ci.RegisterPostEvictionCallback(PostEvictionCallback);
+                    ci.AddExpirationToken(new CancellationChangeToken(_resetCacheToken.Token));
+
+                    return LoadTemplatesFromDatabase();
+                });
+    }
+    
+
+    #region Helper methods
+
+    private void ClearCache()
+    {
+        if (_resetCacheToken?.IsCancellationRequested == false && _resetCacheToken.Token.CanBeCanceled)
+        {
+            _resetCacheToken.Cancel();
+            _resetCacheToken.Dispose();
+        }
+
+        _resetCacheToken = new CancellationTokenSource();
+    }
+    
+    private void PostEvictionCallback(object key, object value, EvictionReason reason, object state)
+    {
+        _logger.LogDebug("Mock files cache invalidated because of {reason}", reason);
+    }
+    
+    private void IsUpdatesAppeared()
+    {
+        List<MockakoRestConfig<TKey>> templates = _databaseContext.MockakoRestConfigs
             .Where(x => x.IsActive)
             .ToList();
 
@@ -63,34 +100,16 @@ public class DatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable whe
         }
     }
 
-    #region Helper methods
-
-    private void ClearCache()
-    {
-        if (_resetCacheToken?.IsCancellationRequested == false && _resetCacheToken.Token.CanBeCanceled)
-        {
-            _resetCacheToken.Cancel();
-            _resetCacheToken.Dispose();
-        }
-
-        _resetCacheToken = new CancellationTokenSource();
-    }
-    
-    private void PostEvictionCallback(object key, object value, EvictionReason reason, object state)
-    {
-        throw new NotImplementedException();
-    }
-
-    private async Task<IEnumerable<IRawTemplate>> LoadTemplatesFromDatabaseAsync()
+    private IEnumerable<IRawTemplate> LoadTemplatesFromDatabase()
     {
         List<RawTemplate> rawTemplates = new();
 
         try
         {
-            var tmpls = await _databaseContext.MockakoRestConfigs
+            List<MockakoRestConfig<TKey>> tmpls =  _databaseContext.MockakoRestConfigs
                 // TODO filter by the application type
-                //.Where(x=>x.IsActive && x.AppId == _)
-                .ToListAsync();
+                .Where(x=>x.IsActive && x.ApplicationId == _options.ApplicationId)
+                .ToList();
             
             tmpls.ForEach(x =>
             {
@@ -118,30 +137,18 @@ public class DatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable whe
     }
 
     #endregion
-
-    public IEnumerable<IRawTemplate> GetTemplates()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<IEnumerable<IRawTemplate>> GetTemplatesAsync()
-    {
-        return _memoryCache
-            .GetOrCreateAsync(
-                _cacheKey,
-                async ci =>
-                {
-                    ci.RegisterPostEvictionCallback(PostEvictionCallback);
-                    ci.AddExpirationToken(new CancellationChangeToken(_resetCacheToken.Token));
-
-                    return await LoadTemplatesFromDatabaseAsync();
-                });
-    }
-
-
-
+    
     public void Dispose()
     {
-        _databaseContext.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            _databaseContext?.Dispose();
+        }
     }
 }

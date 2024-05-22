@@ -113,12 +113,6 @@ namespace Mockaco.Templating.Providers.FileProvider
                     return LoadTemplatesFromDirectory();
                 });
         }
-
-        public Task<IEnumerable<IRawTemplate>> GetTemplatesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         private void PostEvictionCallback(object key, object value, EvictionReason reason, object state)
         {
             _logger.LogDebug("Mock files cache invalidated because of {reason}", reason);

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Mockaco.HealthChecks;
@@ -6,6 +7,8 @@ using Mockaco.Options;
 using Mockaco.Settings;
 using Mockaco.Templating;
 using Mockaco.Templating.Generating;
+using Mockaco.Templating.Providers;
+using Mockaco.Templating.Providers.DatabaseProvider;
 using Mockaco.Templating.Request;
 using Mockaco.Templating.Response;
 using Mockaco.Templating.Scripting;
@@ -66,6 +69,7 @@ namespace Mockaco.DependencyInjection
                 .AddSingleton<IFakerFactory, LocalizedFakerFactory>()
                 .AddSingleton<IMockProvider, MockProvider>()
                 //.AddSingleton<ITemplateProvider, TemplateFileProvider>()
+              //  .AddSingleton<ITemplateProvider, DatabaseTemplateProvider<>>()
 
                 .AddScoped<IRequestMatcher, RequestMethodMatcher>()
                 .AddScoped<IRequestMatcher, RequestRouteMatcher>()

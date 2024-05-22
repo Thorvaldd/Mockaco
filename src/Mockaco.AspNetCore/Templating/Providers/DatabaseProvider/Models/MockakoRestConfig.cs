@@ -6,4 +6,5 @@ public class MockakoRestConfig<TKey> where TKey : IEquatable<TKey>
     public bool IsActive { get; set; }
     public string Config { get; set; }
     public DateTime ModifiedDateTime { get; set; }
+    public int ApplicationId { get; set; }
 }
