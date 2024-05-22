@@ -1,6 +1,6 @@
 namespace Mockaco.Templating.Providers.DatabaseProvider;
 
-public class DatabaseProviderOptions
+public class MockakoDatabaseTemplateProviderOptions
 {
     public int ApplicationId { get; set; }
 }

@@ -20,9 +20,31 @@ public class DefaultPersistMockakoEntityTypeConfiguration<TKey>
     {
         builder.ToTable(_tableName);
 
-        builder.Property(x => x.Id)
-            .HasColumnName("id");
+        builder.HasKey(x => x.Id);
         
+        builder.Property(x => x.Id)
+            .HasMaxLength(100)
+            .HasColumnName("task_id");
+
+        builder.Property(x => x.IsActive)
+            .HasColumnName("is_active")
+            .IsRequired()
+            .HasDefaultValue(false);
+
+        builder.Property(x => x.Config)
+            .HasColumnName("config")
+            .IsRequired();
+
+        builder.Property(x => x.ModifiedDateTime)
+            .HasColumnName("modified_dt")
+            .IsRequired();
+
+        builder.Property(x => x.ApplicationId)
+            .HasColumnName("application_id")
+            .IsRequired();
+
+
+
         // TODO continue configuring
     }
 }
