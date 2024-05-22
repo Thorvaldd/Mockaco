@@ -4,8 +4,8 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 using Mockaco.Templating.Models;
-using Mockaco.Templating.Providers.DatabaseProvider.Context;
-using Mockaco.Templating.Providers.DatabaseProvider.Models;
+using Mockako.DAL.Context;
+using Mockako.DAL.Entities;
 
 namespace Mockaco.Templating.Providers.DatabaseProvider;
 

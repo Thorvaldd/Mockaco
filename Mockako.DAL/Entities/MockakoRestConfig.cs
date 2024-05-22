@@ -1,4 +1,6 @@
-namespace Mockaco.Templating.Providers.DatabaseProvider.Models;
+using System;
+
+namespace Mockako.DAL.Entities;
 
 public class MockakoRestConfig<TKey> where TKey : IEquatable<TKey>
 {

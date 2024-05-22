@@ -1,8 +1,9 @@
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Mockaco.Templating.Providers.DatabaseProvider.Models;
+using Mockako.DAL.Entities;
 
-namespace Mockaco.Templating.Providers.DatabaseProvider.EntityConfigurations;
+namespace Mockako.DAL.EntityConfigurations;
 
 public class DefaultPersistMockakoEntityTypeConfiguration<TKey>
     : IEntityTypeConfiguration<MockakoRestConfig<TKey>>
