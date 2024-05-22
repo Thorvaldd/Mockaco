@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<LangVersion>latest</LangVersion>
+		<TargetFramework>net6.0</TargetFramework>
 		<AssemblyName>Mockaco.AspNetCore</AssemblyName>
 		<RootNamespace>Mockaco</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -46,8 +45,8 @@
 	<ItemGroup>
 		<PackageReference Include="Bogus" Version="35.5.1" />
 		<PackageReference Include="MAB.DotIgnore" Version="3.0.2" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.19" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.19" />
 		<PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.14" />
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.9.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
