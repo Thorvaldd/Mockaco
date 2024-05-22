@@ -1,10 +1,11 @@
+using System;
 using Microsoft.EntityFrameworkCore;
-using Mockaco.Templating.Providers.DatabaseProvider.EntityConfigurations;
-using Mockaco.Templating.Providers.DatabaseProvider.Models;
+using Mockako.DAL.Entities;
+using Mockako.DAL.EntityConfigurations;
 
-namespace Mockaco.Templating.Providers.DatabaseProvider.Context;
+namespace Mockako.DAL.Context;
 
-public partial class MockakoDatabaseContext<TKey> : DbContext where TKey : IEquatable<TKey>
+public class MockakoDatabaseContext<TKey> : DbContext where TKey : IEquatable<TKey>
 {
     public virtual DbSet<MockakoRestConfig<TKey>> MockakoRestConfigs { get; set; }
     private const string DefaultTableName = "mockako_rest_configs";
@@ -19,7 +20,7 @@ public partial class MockakoDatabaseContext<TKey> : DbContext where TKey : IEqua
 
     public MockakoDatabaseContext(DbContextOptions<MockakoDatabaseContext<TKey>> options,
         string schemaName = null, string tableName = DefaultTableName)
-    :base(options)
+        : base(options)
     {
         _mockakoRestConfig = new DefaultPersistMockakoEntityTypeConfiguration<TKey>(tableName);
         _schemaName = schemaName;
@@ -37,7 +38,7 @@ public partial class MockakoDatabaseContext<TKey> : DbContext where TKey : IEqua
     public MockakoDatabaseContext(DbContextOptions<MockakoDatabaseContext<TKey>> options,
         IEntityTypeConfiguration<MockakoRestConfig<TKey>> modelConfig,
         string schemaName = null)
-    :base(options)
+        : base(options)
     {
         _mockakoRestConfig = modelConfig;
         _schemaName = schemaName;
@@ -46,7 +47,7 @@ public partial class MockakoDatabaseContext<TKey> : DbContext where TKey : IEqua
     protected MockakoDatabaseContext(DbContextOptions options,
         IEntityTypeConfiguration<MockakoRestConfig<TKey>> modelConfig,
         string schemaName = null)
-    :base(options)
+        : base(options)
     {
         _mockakoRestConfig = modelConfig;
         _schemaName = schemaName;
