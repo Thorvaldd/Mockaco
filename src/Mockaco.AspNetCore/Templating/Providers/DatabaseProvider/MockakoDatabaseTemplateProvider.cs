@@ -9,23 +9,23 @@ using Mockaco.Templating.Providers.DatabaseProvider.Models;
 
 namespace Mockaco.Templating.Providers.DatabaseProvider;
 
-public class DatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable where TKey : IEquatable<TKey>
+public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable where TKey : IEquatable<TKey>
 {
     public event EventHandler OnChange;
     private readonly IMemoryCache _memoryCache;
-    private ILogger<DatabaseTemplateProvider<TKey>> _logger;
+    private ILogger<MockakoDatabaseTemplateProvider<TKey>> _logger;
     private readonly MockakoDatabaseContext<TKey> _databaseContext;
-    private readonly DatabaseProviderOptions _options;
+    private readonly MockakoDatabaseTemplateProviderOptions _options;
     
     private readonly string _cacheKey = "_Mockaco_database_mock_provider";
 
     private CancellationTokenSource _resetCacheToken = new ();
 
 
-    public DatabaseTemplateProvider(IMemoryCache memoryCache,
-        ILogger<DatabaseTemplateProvider<TKey>> logger,
+    public MockakoDatabaseTemplateProvider(IMemoryCache memoryCache,
+        ILogger<MockakoDatabaseTemplateProvider<TKey>> logger,
         MockakoDatabaseContext<TKey> databaseContext,
-        DatabaseProviderOptions options)
+        MockakoDatabaseTemplateProviderOptions options)
     {
         _memoryCache = memoryCache;
         _logger = logger;
@@ -76,9 +76,9 @@ public class DatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable whe
             .Where(x => x.IsActive)
             .ToList();
 
-        foreach (var template in templates)
+        foreach (MockakoRestConfig<TKey> template in templates)
         {
-            var lastUpdate = _memoryCache.Get<DateTime?>($"{_cacheKey}_{template.Id}");
+            DateTime? lastUpdate = _memoryCache.Get<DateTime?>($"{_cacheKey}_{template.Id}");
 
             if (!lastUpdate.HasValue) //new config in db
             {
