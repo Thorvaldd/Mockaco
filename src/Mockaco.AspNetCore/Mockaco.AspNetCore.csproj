@@ -69,17 +69,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Templating\Providers\DatabaseProvider\Models\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\Mockako.DAL\Mockako.DAL.csproj" />
 	  <ProjectReference Include="..\Mockako.DAL\Mockako.DAL.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\Mockako.DAL\Mockako.DAL.csproj" />
-	  <ProjectReference Include="..\Mockako.DAL\Mockako.DAL.csproj" />
-	</ItemGroup>
-
 </Project>
