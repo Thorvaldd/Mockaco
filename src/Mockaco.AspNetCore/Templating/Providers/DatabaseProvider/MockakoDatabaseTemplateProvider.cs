@@ -1,5 +1,6 @@
 using System.Reactive.Linq;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 using Mockaco.Templating.Models;
@@ -9,12 +10,12 @@ using Mockako.DAL.Entities;
 
 namespace Mockaco.Templating.Providers.DatabaseProvider;
 
-public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposable where TKey : IEquatable<TKey>
+public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider where TKey : IEquatable<TKey>
 {
     public event EventHandler OnChange;
     private readonly IMemoryCache _memoryCache;
     private ILogger<MockakoDatabaseTemplateProvider<TKey>> _logger;
-    private readonly MockakoDatabaseContext<TKey> _databaseContext;
+    private readonly IServiceProvider _serviceProvider;
     private readonly MockakoDatabaseTemplateProviderOptions _options;
     
     private readonly string _cacheKey = "_Mockaco_database_mock_provider";
@@ -24,12 +25,12 @@ public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposa
 
     public MockakoDatabaseTemplateProvider(IMemoryCache memoryCache,
         ILogger<MockakoDatabaseTemplateProvider<TKey>> logger,
-        MockakoDatabaseContext<TKey> databaseContext,
+        IServiceProvider serviceProvider,
         MockakoDatabaseTemplateProviderOptions options)
     {
         _memoryCache = memoryCache;
         _logger = logger;
-        _databaseContext = databaseContext;
+        _serviceProvider = serviceProvider;
         _options = options;
 
 
@@ -72,7 +73,10 @@ public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposa
     
     private void IsUpdatesAppeared()
     {
-        List<MockakoRestConfig<TKey>> templates = _databaseContext.MockakoRestConfigs
+        using IServiceScope scope = _serviceProvider.CreateScope();
+        MockakoDatabaseContext<TKey> databaseContext = scope.ServiceProvider.GetRequiredService<MockakoDatabaseContext<TKey>>();
+        
+        List<MockakoRestConfig<TKey>> templates = databaseContext.MockakoRestConfigs
             .Where(x => x.IsActive)
             .ToList();
 
@@ -106,7 +110,10 @@ public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposa
 
         try
         {
-            List<MockakoRestConfig<TKey>> tmpls =  _databaseContext.MockakoRestConfigs
+            using IServiceScope scope = _serviceProvider.CreateScope();
+            MockakoDatabaseContext<TKey> databaseContext = scope.ServiceProvider.GetRequiredService<MockakoDatabaseContext<TKey>>();
+            
+            List<MockakoRestConfig<TKey>> tmpls =  databaseContext.MockakoRestConfigs
                 // TODO filter by the application type
                 .Where(x=>x.IsActive && x.ApplicationId == _options.ApplicationId)
                 .ToList();
@@ -137,18 +144,4 @@ public class MockakoDatabaseTemplateProvider<TKey> : ITemplateProvider, IDisposa
     }
 
     #endregion
-    
-    public void Dispose()
-    {
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
-
-    protected virtual void Dispose(bool disposing)
-    {
-        if (disposing)
-        {
-            _databaseContext?.Dispose();
-        }
-    }
 }
